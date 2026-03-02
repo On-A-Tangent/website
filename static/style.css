@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ---- Reset ---- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { background: #0a0a0a; overscroll-behavior: none; }
+
+/* ---- Base ---- */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: #e5e5e5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ---- LAYER 1: Geometric color shapes ---- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    /* Diagonal warm streak — top-left to center */
+    linear-gradient(135deg, rgba(90,130,180,0.18) 0%, transparent 40%),
+    /* Conic angular sweep from bottom-right */
+    conic-gradient(from 220deg at 80% 70%, rgba(90,130,180,0.10) 0deg, transparent 60deg, transparent 360deg),
+    /* Sharp angled warm accent panel */
+    linear-gradient(160deg, transparent 45%, rgba(90,130,180,0.04) 45%, rgba(90,130,180,0.04) 55%, transparent 55%),
+    /* Secondary diagonal warm streak — bottom edge */
+    linear-gradient(315deg, rgba(90,130,180,0.12) 0%, transparent 35%),
+    /* Subtle conic from top-right corner */
+    conic-gradient(from 340deg at 90% 10%, rgba(90,130,180,0.06) 0deg, transparent 45deg, transparent 360deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- LAYER 2: Checkered grid (warm tint) ---- */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(90,130,180,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90,130,180,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- LAYER 3: Noise grain ---- */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+}
+.grain svg { width: 100%; height: 100%; }
+
+/* ---- Nav ---- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 20px 32px;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(90,130,180,0.15);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.nav-logo span {
+  color: #5A82B4;
+}
+
+/* Breadcrumb trail */
+.nav-breadcrumb {
+  font-size: 0.85rem;
+  color: #525252;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-breadcrumb a {
+  color: #777;
+  transition: color 0.2s;
+}
+
+.nav-breadcrumb a:hover {
+  color: #5A82B4;
+}
+
+.nav-breadcrumb .sep {
+  color: #333;
+}
+
+/* ---- Main content wrapper ---- */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 32px;
+}
+
+/* ---- Page header ---- */
+.page-header {
+  margin-bottom: 48px;
+}
+
+.page-header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.page-header .subtitle {
+  font-size: 1rem;
+  color: #525252;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ---- Site description ---- */
+.site-desc {
+  max-width: 640px;
+  font-size: 1rem;
+  color: #888;
+  line-height: 1.8;
+  margin-bottom: 48px;
+}
+
+/* ---- Section heading ---- */
+.section-heading {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #525252;
+  margin-bottom: 24px;
+}
+
+/* ---- Nav links ---- */
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  color: #777;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #5A82B4;
+}
+
+/* ---- Project cards grid ---- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 32px;
+  transition: border-color 0.3s, background 0.3s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-card:hover {
+  border-color: rgba(90,130,180,0.35);
+  background: rgba(90,130,180,0.04);
+  transform: translateY(-2px);
+}
+
+.project-card h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.project-card .tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #5A82B4;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* ---- Contact section ---- */
+.contact-section {
+  margin-top: 100px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.contact-section h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+
+.contact-grid {
+  display: flex;
+  gap: 64px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #5A82B4;
+}
+
+.contact-item a,
+.contact-item p {
+  font-size: 0.95rem;
+  color: #999;
+  line-height: 1.7;
+}
+
+.contact-item a:hover {
+  color: #5A82B4;
+}
+
+/* ---- Blog post list (project page) ---- */
+.project-desc {
+  font-size: 1rem;
+  color: #999;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 680px;
+}
+
+.post-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.post-list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.post-list li a:hover {
+  background: rgba(90,130,180,0.06);
+}
+
+.post-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ddd;
+}
+
+.post-date {
+  font-size: 0.8rem;
+  color: #555;
+  white-space: nowrap;
+  margin-left: 24px;
+}
+
+/* ---- Blog post article ---- */
+.article {
+  max-width: 680px;
+}
+
+.article-meta {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 32px;
+}
+
+.article h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.article p {
+  font-size: 1rem;
+  line-height: 2;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.article h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #e5e5e5;
+  margin-top: 36px;
+  margin-bottom: 12px;
+}
+
+.article ul, .article ol {
+  padding-left: 24px;
+  margin-bottom: 20px;
+}
+
+.article li {
+  font-size: 1rem;
+  line-height: 2;
+  color: #bbb;
+}
+
+.article em {
+  color: #ddd;
+  font-style: italic;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 40px;
+  font-size: 0.85rem;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: #5A82B4;
+}
+
+/* ---- Code blocks ---- */
+pre {
+  position: relative;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 20px 24px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+pre .copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 5px;
+  color: #666;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, color 0.2s, background 0.2s;
+}
+
+pre:hover .copy-btn {
+  opacity: 1;
+}
+
+pre .copy-btn:hover {
+  color: #aaa;
+  background: rgba(255,255,255,0.1);
+}
+
+code {
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  font-size: 0.875em;
+}
+
+:not(pre) > code {
+  background: rgba(90,130,180,0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #9dbcd4;
+}

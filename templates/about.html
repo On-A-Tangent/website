@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} — {{ config.title }}{% endblock %}
+
+{% block breadcrumb %}
+<div class="nav-breadcrumb">
+  <span class="sep">/</span>
+  {{ page.title }}
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>{{ page.title }}</h1>
+</div>
+
+<article class="article">
+  {{ page.content | safe }}
+</article>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} — {{ config.title }}{% endblock %}
+
+{% block breadcrumb %}
+<div class="nav-breadcrumb">
+  <span class="sep">/</span>
+  <a href="/">Projects</a>
+  <span class="sep">/</span>
+  {{ section.title }}
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>{{ section.title }}</h1>
+  <p class="subtitle">{{ section.extra.tag }}</p>
+</div>
+
+<div class="project-desc">{{ section.content | safe }}</div>
+
+<ul class="post-list">
+  {% for post in section.pages %}
+    <li>
+      <a href="{{ post.permalink }}">
+        <span class="post-title">{{ post.title }}</span>
+        <span class="post-date">{{ post.date | date(format="%Y-%m-%d") }}</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

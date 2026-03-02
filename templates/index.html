@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ config.title }}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>{{ section.title }}</h1>
+</div>
+
+{% if section.content %}
+  <div class="site-desc">{{ section.content | safe }}</div>
+{% endif %}
+
+<h2 class="section-heading">Current engagements</h2>
+
+<div class="project-grid">
+  {% for subsection_path in section.subsections %}
+    {% set project = get_section(path=subsection_path) %}
+    <a href="{{ project.permalink }}" class="project-card">
+      <span class="tag">{{ project.extra.tag }}</span>
+      <h2>{{ project.title }}</h2>
+      <p>{{ project.description }}</p>
+    </a>
+  {% endfor %}
+</div>
+
+<section class="contact-section" id="contact">
+  <h2>Contact</h2>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <span class="contact-label">Email</span>
+      <a href="mailto:hello@onatangent.xyz">hello@onatangent.xyz</a>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">Address</span>
+      <p>On A Tangent Ltd.<br>47 Charlotte Street<br>London W1T 1RS</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,7 @@
+base_url = "/"
+title = "On A Tangent Ltd."
+compile_sass = false
+build_search_index = false
+
+[markdown.highlighting]
+theme = "kanagawa-wave"
