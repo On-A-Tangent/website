@@ -1,40 +1,15 @@
 {% extends "base.html" %}
 
 {% block title %}{{ config.title }}{% endblock %}
+{% block body_class %}home-page{% endblock %}
 
 {% block content %}
-<div class="page-header">
+<section class="home-hero">
+  <p class="home-kicker">Street Fighting Mathematics and Engineering</p>
   <h1>{{ section.title }}</h1>
-</div>
 
-{% if section.content %}
-  <div class="site-desc">{{ section.content | safe }}</div>
-{% endif %}
-
-<h2 class="section-heading">Projects</h2>
-
-<div class="project-grid">
-  {% for subsection_path in section.subsections %}
-    {% set project = get_section(path=subsection_path) %}
-    <a href="{{ project.permalink }}" class="project-card">
-      <span class="tag">{{ project.extra.tag }}</span>
-      <h2>{{ project.title }}</h2>
-      <p>{{ project.description }}</p>
-    </a>
-  {% endfor %}
-</div>
-
-<section class="contact-section" id="contact">
-  <h2>Contact</h2>
-  <div class="contact-grid">
-    <div class="contact-item">
-      <span class="contact-label">Email</span>
-      <a href="mailto:hello@onatangent.xyz">on.a.tangent@randomwalks.xyz</a>
-    </div>
-    <div class="contact-item">
-      <span class="contact-label">Address</span>
-      <p>On A Tangent Ltd.<br>80 Godstow Road<br>Oxford OX2 8NY</p>
-    </div>
-  </div>
+  {% if section.content %}
+    <div class="home-copy">{{ section.content | safe }}</div>
+  {% endif %}
 </section>
 {% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} — {{ config.title }}{% endblock %}
+
+{% block breadcrumb %}
+<div class="nav-breadcrumb">
+  <span class="sep">/</span>
+  {{ page.title }}
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>{{ page.title }}</h1>
+</div>
+
+{% if page.content %}
+  <article class="article">
+    {{ page.content | safe }}
+  </article>
+{% endif %}
+
+<section class="contact-section contact-page">
+  <div class="contact-grid">
+    <div class="contact-item">
+      <span class="contact-label">Email</span>
+      <a href="mailto:on.a.tangent@randomwalks.xyz">on.a.tangent@randomwalks.xyz</a>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">Address</span>
+      <p>On A Tangent Ltd.<br>80 Godstow Road<br>Oxford OX2 8NY</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

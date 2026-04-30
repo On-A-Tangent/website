@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} — {{ config.title }}{% endblock %}
+
+{% block breadcrumb %}
+<div class="nav-breadcrumb">
+  <span class="sep">/</span>
+  {{ page.title }}
+</div>
+{% endblock %}
+
+{% block content %}
+{% set home = get_section(path="_index.md") %}
+<div class="page-header">
+  <h1>{{ page.title }}</h1>
+</div>
+
+{% if page.content %}
+  <div class="site-desc">{{ page.content | safe }}</div>
+{% endif %}
+
+<div class="project-grid">
+  {% for subsection_path in home.subsections %}
+    {% set project = get_section(path=subsection_path) %}
+    <a href="{{ project.permalink }}" class="project-card">
+      <span class="tag">{{ project.extra.tag }}</span>
+      <h2>{{ project.title }}</h2>
+      <p>{{ project.description }}</p>
+    </a>
+  {% endfor %}
+</div>
+{% endblock %}

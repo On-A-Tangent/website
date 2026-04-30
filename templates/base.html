@@ -12,7 +12,7 @@
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
 
   <div class="grain">
     <svg>
@@ -28,8 +28,9 @@
       <a href="/" class="nav-logo">On A <span>Tangent</span></a>
       {% block breadcrumb %}{% endblock %}
       <div class="nav-links">
+        <a href="/projects/">Projects</a>
+        <a href="/people/">People</a>
         <a href="/about/">About</a>
-        <a href="/#contact">Contact</a>
       </div>
     </div>
   </nav>
@@ -37,6 +38,21 @@
   <main class="content">
     {% block content %}{% endblock %}
   </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <p class="site-footer-name">On A Tangent Ltd.</p>
+        <p class="site-footer-contact">
+          <a href="mailto:on.a.tangent@randomwalks.xyz">on.a.tangent@randomwalks.xyz</a>
+        </p>
+      </div>
+      <div class="site-footer-meta">
+        <p><span class="site-footer-key">Registration</span> Registered in England and Wales. Company number: [to be added].</p>
+        <p><span class="site-footer-key">Registered office</span> 80 Godstow Road, Oxford, United Kingdom, OX2 8NY.</p>
+      </div>
+    </div>
+  </footer>
 
   <script>
     document.querySelectorAll('pre').forEach(pre => {

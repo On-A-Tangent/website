@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} — {{ config.title }}{% endblock %}
+
+{% block breadcrumb %}
+<div class="nav-breadcrumb">
+  <span class="sep">/</span>
+  {{ page.title }}
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>{{ page.title }}</h1>
+</div>
+
+{% if page.extra.intro %}
+  <div class="site-desc">
+    <p>{{ page.extra.intro }}</p>
+  </div>
+{% endif %}
+
+<section class="people-grid">
+  {% for person in page.extra.people %}
+    <article class="people-card">
+      <img
+        class="people-avatar"
+        src="{{ get_url(path=person.image) }}"
+        alt="Portrait placeholder for {{ person.name }}"
+      >
+      <div class="people-meta">
+        <h2>{{ person.name }}</h2>
+        <p class="people-role">{{ person.role }}</p>
+        <p class="people-bio">{{ person.bio }}</p>
+        {% if person.website %}
+          <p class="people-website">
+            <a rel="external" href="{{ person.website }}">{{ person.website }}</a>
+          </p>
+        {% endif %}
+      </div>
+    </article>
+  {% endfor %}
+</section>
+{% endblock %}
