@@ -4,26 +4,26 @@ path = "people"
 template = "people.html"
 
 [extra]
-intro = "The people behind On A Tangent Ltd. Biographies often get out of date."
+intro = "Everyone here helped us in some way or the other."
 
 [[extra.people]]
-name = "Person One"
-role = "Role to be added"
-bio = "Short biography to be added."
-image = "people/person-one.svg"
+name = "Ari Biswas"
+role = "Founder"
+bio = "An entirely unserious person"
+image = "people/person-one.jpg"
+website = "https://randomwalks.xyz"
+
+[[extra.people]]
+name = "Vicky Fouhy"
+role = "Visualisation"
+bio = "Good quality education should be freely available for all."
+image = "people/person-two.jpg"
 website = "https://example.com"
 
 [[extra.people]]
-name = "Person Two"
-role = "Role to be added"
+name = "The Squirrel"
+role = "Mathematician"
 bio = "Short biography to be added."
-image = "people/person-two.svg"
-website = "https://example.com"
-
-[[extra.people]]
-name = "Person Three"
-role = "Role to be added"
-bio = "Short biography to be added."
-image = "people/person-three.svg"
-website = "https://example.com"
+image = "people/person-three.jpg"
+website = ""
 +++
