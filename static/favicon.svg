@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">On A Tangent Ltd. favicon</title>
+  <desc id="desc">A simple circle with a tangent line.</desc>
+  <defs>
+    <style>
+      .mark {
+        fill: none;
+        stroke: #8c5a56;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <path class="mark" d="M34 238 L286 238" stroke-width="12" />
+  <circle class="mark" cx="160" cy="160" r="78" stroke-width="14" />
+</svg>
