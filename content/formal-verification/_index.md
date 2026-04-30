@@ -7,4 +7,3 @@ sort_by = "date"
 tag = "Formal-Verification"
 +++
 
-Do the bytecode first

@@ -7,4 +7,4 @@ sort_by = "date"
 tag = "Engineering"
 +++
 
-
+Note about funding.
