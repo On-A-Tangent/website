@@ -519,7 +519,7 @@ body::after {
     bottom: auto;
     margin-top: 8px;
     padding: 0 20px 24px;
-    background: transparent;
+    background: #0b0b0b;
     border-top: 0;
   }
 
