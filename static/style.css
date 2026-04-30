@@ -554,6 +554,25 @@ body::after {
   max-width: 680px;
 }
 
+.home-copy blockquote,
+.site-desc blockquote,
+.project-desc blockquote,
+.article blockquote {
+  margin: 24px 0;
+  padding: 14px 18px;
+  border-left: 2px solid rgba(var(--accent-rgb), 0.65);
+  background: rgba(255,255,255,0.03);
+  border-radius: 0 8px 8px 0;
+}
+
+.home-copy blockquote p,
+.site-desc blockquote p,
+.project-desc blockquote p,
+.article blockquote p {
+  margin-bottom: 0;
+  color: #b8b1aa;
+}
+
 .post-list {
   list-style: none;
   display: flex;
