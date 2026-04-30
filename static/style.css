@@ -488,6 +488,10 @@ body::after {
 }
 
 @media (max-width: 720px) {
+  body {
+    padding-bottom: 0;
+  }
+
   .nav {
     padding: 18px 20px;
   }
@@ -505,17 +509,25 @@ body::after {
   }
 
   .content {
-    padding: 40px 20px 56px;
+    padding: 36px 20px 32px;
   }
 
   .site-footer {
-    padding: 0 20px;
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin-top: 8px;
+    padding: 0 20px 24px;
+    background: transparent;
+    border-top: 0;
   }
 
   .site-footer-inner {
+    border-top: 1px solid rgba(255,255,255,0.08);
     grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 10px 0 12px;
+    gap: 10px;
+    padding: 14px 0 0;
   }
 
   .site-footer-meta {
@@ -524,15 +536,15 @@ body::after {
   }
 
   .home-page .content {
-    min-height: calc(100dvh - 176px);
+    min-height: auto;
     padding-top: 18px;
-    padding-bottom: 18px;
+    padding-bottom: 20px;
     align-items: flex-start;
   }
 
   .home-hero {
     min-height: auto;
-    padding-top: 28px;
+    padding-top: 12px;
   }
 
   .project-grid {
