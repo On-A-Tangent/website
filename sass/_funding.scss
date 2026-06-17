@@ -1,0 +1,48 @@
+// "Funding" callout — a hand-drawn (button-55 style) box, recoloured for the
+// dark theme and amber accent. Rendered by the `funding` body shortcode.
+
+.funding-callout {
+  margin: 28px 0;
+  padding: 18px 24px 20px;
+  font-family: 'Neucha', 'Geist', sans-serif;
+  color: var(--heading);
+  background-color: rgba(var(--accent-rgb), 0.05);
+  border: 2px solid var(--accent);
+  // asymmetric radius gives the sketchy, hand-drawn outline
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: rgba(var(--accent-rgb), 0.18) 12px 20px 22px -16px;
+}
+
+.funding-callout-title {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+}
+
+.funding-callout-body {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #d8d4cc;
+}
+
+.funding-callout-body p {
+  margin: 0 0 8px;
+}
+
+.funding-callout-body p:last-child {
+  margin-bottom: 0;
+}
+
+.funding-callout-body a {
+  color: var(--accent-soft);
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--accent-rgb), 0.4);
+  text-underline-offset: 0.16em;
+}
+
+.funding-callout-body a:hover {
+  color: var(--accent-strong);
+}

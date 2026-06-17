@@ -1,0 +1,16 @@
+{#-
+  Funding callout (hand-drawn "button-55" style, themed).
+
+  Body shortcode — write the funding text between the tags:
+
+    {% funding(title="Funding") %}
+    This project was funded by [a16z](https://a16zcrypto.com/) under a
+    four-month milestone contract.
+    {% end %}
+
+  - title : optional heading shown above the body.
+-#}
+<div class="funding-callout">
+  {% if title %}<span class="funding-callout-title">{{ title }}</span>{% endif %}
+  <div class="funding-callout-body">{{ body | markdown | safe }}</div>
+</div>

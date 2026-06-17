@@ -29,7 +29,9 @@
 <div class="page-header project-page-header">
   <div class="project-page-heading">
     <h1>{{ section.title }}</h1>
-    <p class="subtitle">{{ section.extra.tag }}</p>
+    {% if section.extra.authors %}
+      <p class="project-authors">{{ section.extra.authors | join(sep=", ") }}</p>
+    {% endif %}
   </div>
 
   {% if section.extra.client %}

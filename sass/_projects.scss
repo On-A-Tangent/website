@@ -88,6 +88,14 @@
   max-width: 720px; // keep the title within the body column
 }
 
+// Author byline, above the tag.
+.project-authors {
+  margin-bottom: 10px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #a9aebd;
+}
+
 .project-funding {
   margin-top: 16px;
   display: flex;
