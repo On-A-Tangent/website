@@ -14,9 +14,12 @@ poc_url = "https://people.cs.georgetown.edu/jthaler/"
 note = "Four-month milestone contract"
 +++
 
-> This project was funded by [A16z crypto](https://a16zcrypto.com/) under a four-month milestone contract.
+
+  {% funding(title="Funding Story") %}
+  This project was funded by [a16z](https://a16zcrypto.com/) under a four-month milestone contract.
+  {% end %}
 
 Between August 2025 and November 2025, we worked with [Justin Thaler](https://people.cs.georgetown.edu/jthaler/) and his team to optimise the Jolt prover.
-Further details are provided below.
+Further details coming soon.
 
 
