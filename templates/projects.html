@@ -11,6 +11,7 @@
 
 {% block content %}
 {% set home = get_section(path="_index.md") %}
+
 <div class="page-header">
   <h1>{{ page.title }}</h1>
 </div>
@@ -23,6 +24,9 @@
   {% for subsection_path in home.subsections %}
     {% set project = get_section(path=subsection_path) %}
     <a href="{{ project.permalink }}" class="project-card">
+      {% if project.extra.client_logo %}
+        <img class="project-card-client" src="{{ get_url(path=project.extra.client_logo) }}" alt="{{ project.extra.client }}" title="{{ project.extra.client }}">
+      {% endif %}
       <span class="tag">{{ project.extra.tag }}</span>
       <h2>{{ project.title }}</h2>
       <p>{{ project.description }}</p>

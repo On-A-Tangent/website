@@ -7,7 +7,7 @@ template = "people.html"
 intro = "Everyone listed here helped us in some way or the other."
 
 [[extra.people]]
-name = "Ari Biswas"
+name = "Ari"
 role = "Founder"
 bio = ""
 image = "people/person-one.jpg"
@@ -19,5 +19,13 @@ role = "Visualisation"
 bio =""
 image = "people/person-two.jpg"
 website = "https://arandomwalker.xyz"
+
+[[extra.people]]
+name = "Daniel Ross"
+role = ""
+bio =""
+image = ""
+website = ""
+
 
 +++

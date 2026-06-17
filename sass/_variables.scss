@@ -1,0 +1,14 @@
+// Design tokens.
+
+// Responsive breakpoint (mobile and below).
+$bp-mobile: 720px;
+
+:root {
+  --accent: #d8a64e;
+  --accent-strong: #f0c574;
+  --accent-soft: #d8a64e;
+  --accent-rgb: 216, 166, 78;
+  --heading: #e7e9f5;
+  --heading-accent: #aab2ee;
+  --heading-gradient: linear-gradient(180deg, #f4f5fc 0%, #b6bdef 100%);
+}

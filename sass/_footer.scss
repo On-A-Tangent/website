@@ -1,0 +1,100 @@
+// Fixed site footer. NOTE: currently unrendered — the footer was removed from
+// base.html and the company info now lives in the home page (_home.scss).
+// Kept for reference / easy re-enable.
+
+.site-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  padding: 0 32px;
+  background: #0b0b0b;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.site-footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 0 14px;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(420px, 2fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.site-footer-brand {
+  padding-top: 2px;
+}
+
+.site-footer-name {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #cfcfcf;
+  letter-spacing: -0.01em;
+}
+
+.site-footer-contact {
+  margin-top: 3px;
+}
+
+.site-footer-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  text-align: left;
+  justify-self: end;
+}
+
+.site-footer-inner p {
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: #7a7a7a;
+}
+
+.site-footer-key {
+  display: inline-block;
+  margin-right: 0.45rem;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a9a9a;
+}
+
+.site-footer-inner a {
+  color: #8c8c8c;
+  text-decoration: underline;
+  text-decoration-color: rgba(140,140,140,0.35);
+  text-underline-offset: 0.16em;
+}
+
+.site-footer-inner a:hover {
+  color: #c2c2c2;
+}
+
+@media (max-width: $bp-mobile) {
+  .site-footer {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin-top: 8px;
+    padding: 0 20px 24px;
+    background: #0b0b0b;
+    border-top: 0;
+  }
+
+  .site-footer-inner {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px 0 0;
+  }
+
+  .site-footer-meta {
+    align-items: flex-start;
+    text-align: left;
+  }
+}

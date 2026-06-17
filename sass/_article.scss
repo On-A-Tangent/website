@@ -1,0 +1,123 @@
+// Long-form content: project descriptions, blockquotes, post lists, articles.
+
+.project-desc {
+  font-size: 1rem;
+  color: #999;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 720px;
+}
+
+.home-copy blockquote,
+.site-desc blockquote,
+.project-desc blockquote,
+.article blockquote {
+  margin: 24px 0;
+  padding: 14px 18px;
+  border-left: 2px solid rgba(var(--accent-rgb), 0.65);
+  background: rgba(255,255,255,0.03);
+  border-radius: 0 8px 8px 0;
+}
+
+.home-copy blockquote p,
+.site-desc blockquote p,
+.project-desc blockquote p,
+.article blockquote p {
+  margin-bottom: 0;
+  color: #b8b1aa;
+}
+
+.post-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.post-list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.post-list li a:hover {
+  background: rgba(var(--accent-rgb),0.06);
+}
+
+.post-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ddd;
+}
+
+.post-date {
+  font-size: 0.8rem;
+  color: #555;
+  white-space: nowrap;
+  margin-left: 24px;
+}
+
+.article {
+  max-width: 720px;
+}
+
+.article-meta {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 32px;
+}
+
+.article h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--heading);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.article p {
+  font-size: 1rem;
+  line-height: 2;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.article h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #e5e5e5;
+  margin-top: 36px;
+  margin-bottom: 12px;
+}
+
+.article ul, .article ol {
+  padding-left: 24px;
+  margin-bottom: 20px;
+}
+
+.article li {
+  font-size: 1rem;
+  line-height: 2;
+  color: #bbb;
+}
+
+.article em {
+  color: #ddd;
+  font-style: italic;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 40px;
+  font-size: 0.85rem;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}

@@ -1,0 +1,40 @@
+// All image styling: plain content images and the `image` shortcode figure.
+
+// Plain markdown images scale to their container.
+.article img,
+.project-desc img,
+.home-copy img,
+.site-desc img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 28px 0;
+  border-radius: 8px;
+}
+
+// `image` shortcode: figure + optional caption + optional width.
+figure.figure {
+  margin: 28px 0;
+}
+
+figure.figure--sized {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure.figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 8px;
+}
+
+figure.figure figcaption {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #7e8290;
+  text-align: center;
+}

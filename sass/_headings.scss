@@ -1,0 +1,20 @@
+// Headings: plain, cool-toned to match the background.
+// NOTE: some of these colors are intentionally overridden later (article h2,
+// contact-section h2, project-card h2), so this module must be imported first.
+
+.home-hero h1,
+.page-header h1,
+.article h1,
+.article h2,
+.article h3,
+.contact-section h2,
+.project-card h2 {
+  color: var(--heading);
+}
+
+.article h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 28px;
+  margin-bottom: 10px;
+}

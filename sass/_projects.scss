@@ -1,0 +1,170 @@
+// Projects index: card grid with a small client favicon per card.
+
+// Optional cover banner on an individual project page.
+.project-cover {
+  margin-bottom: 32px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: contain;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  position: relative;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 32px;
+  transition: border-color 0.3s, background 0.3s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-card:hover {
+  border-color: rgba(var(--accent-rgb),0.35);
+  background: rgba(var(--accent-rgb),0.04);
+  transform: translateY(-2px);
+}
+
+.project-card h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+  padding-right: 24px; // keep the title clear of the client icon
+}
+
+.project-card .tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 1.6;
+}
+
+// Small client favicon in the card's top-right corner.
+.project-card-client {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  border-radius: 4px;
+  opacity: 0.65;
+  transition: opacity 0.3s;
+}
+
+.project-card:hover .project-card-client {
+  opacity: 1;
+}
+
+// Funding callout. On wide screens it floats into the right margin beside the
+// content (clear of the body); otherwise it stacks under the title.
+.project-page-header {
+  position: relative;
+}
+
+.project-page-heading {
+  max-width: 720px; // keep the title within the body column
+}
+
+.project-funding {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  max-width: 240px;
+}
+
+.project-funding-label {
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6b6f7d;
+  margin-bottom: 4px;
+}
+
+.project-funding-client {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--heading);
+  transition: color 0.2s;
+}
+
+.project-funding-client img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+.project-funding-client:hover {
+  color: var(--accent);
+}
+
+.project-funding-poc {
+  font-size: 0.68rem;
+  color: #8a8f9e;
+}
+
+.project-funding-poc a {
+  color: var(--accent-soft);
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--accent-rgb), 0.35);
+  text-underline-offset: 0.16em;
+}
+
+.project-funding-poc a:hover {
+  color: var(--accent-strong);
+}
+
+// Optional note (e.g. contract terms) in small font, in the margin callout.
+.project-funding-note {
+  font-size: 0.66rem;
+  line-height: 1.4;
+  color: #6b6f7d;
+}
+
+// Wide screens: lift the callout into the right margin, clear of the body text.
+@media (min-width: 1080px) {
+  .project-funding {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    margin-top: 0;
+    align-items: flex-end;
+    text-align: right;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}

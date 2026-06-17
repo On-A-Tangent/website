@@ -1,0 +1,21 @@
+// On A Tangent — main stylesheet.
+// Modular SCSS partials compiled by Zola into a single public/style.css.
+// Import order preserves the original cascade (headings must come before the
+// nav/pages/projects/contact/article modules that override some heading colors).
+
+@import 'variables';
+@import 'base';
+@import 'headings';
+@import 'background';
+@import 'nav';
+@import 'layout';
+@import 'footer';
+@import 'home';
+@import 'pages';
+@import 'projects';
+@import 'people';
+@import 'contact';
+@import 'article';
+@import 'images';
+@import 'code';
+@import 'footnotes';

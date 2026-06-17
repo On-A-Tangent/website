@@ -1,0 +1,42 @@
+// Footnotes, with Tufte-style sidenotes on wide screens (positioned by
+// static/sidenotes.js, which toggles .has-sidenotes on the article).
+
+.footnote-reference a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footnote-definition {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #9296a6;
+}
+
+.footnote-definition-label {
+  color: var(--heading-accent);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.footnote-definition p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: inherit;
+}
+
+// Sidenotes: float each definition into the right margin.
+.article.has-sidenotes {
+  position: relative;
+}
+
+.article.has-sidenotes .footnote-definition {
+  position: absolute;
+  left: 100%;
+  margin: 0 0 0 40px;
+  width: 280px;
+}

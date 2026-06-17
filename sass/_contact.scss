@@ -1,0 +1,56 @@
+// Contact section.
+
+.contact-section {
+  margin-top: 100px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.contact-page {
+  margin-top: 48px;
+}
+
+.contact-section h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+
+.contact-grid {
+  display: flex;
+  gap: 64px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.contact-item a,
+.contact-item p {
+  font-size: 0.95rem;
+  color: #999;
+  line-height: 1.7;
+}
+
+.contact-item a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: $bp-mobile) {
+  .contact-grid {
+    flex-direction: column;
+    gap: 32px;
+  }
+}

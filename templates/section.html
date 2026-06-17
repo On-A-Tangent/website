@@ -12,13 +12,54 @@
 {% endblock %}
 
 {% block content %}
-<div class="page-header">
-  <h1>{{ section.title }}</h1>
-  <p class="subtitle">{{ section.extra.tag }}</p>
+{% if section.extra.cover %}
+  {% set c = section.extra.cover %}
+  {% if c is starting_with("http") or c is starting_with("/") %}
+    {% set cover_url = c %}
+  {% elif c is containing("/") %}
+    {% set cover_url = get_url(path=c) %}
+  {% else %}
+    {% set cover_url = section.permalink ~ c %}
+  {% endif %}
+  <div class="project-cover">
+    <img src="{{ cover_url }}" alt="{{ section.title }} cover" loading="lazy">
+  </div>
+{% endif %}
+
+<div class="page-header project-page-header">
+  <div class="project-page-heading">
+    <h1>{{ section.title }}</h1>
+    <p class="subtitle">{{ section.extra.tag }}</p>
+  </div>
+
+  {% if section.extra.client %}
+    <aside class="project-funding">
+      <span class="project-funding-label">{{ section.extra.funding_label | default(value="This project was funded by") }}</span>
+      <a class="project-funding-client" rel="external" href="{{ section.extra.client_url }}">
+        <img src="{{ get_url(path=section.extra.client_logo) }}" alt="{{ section.extra.client }}">
+        <span>{{ section.extra.client }}</span>
+      </a>
+      {% if section.extra.poc %}
+        <span class="project-funding-poc">
+          POC&nbsp;·&nbsp;
+          {% if section.extra.poc_url %}
+            <a rel="external" href="{{ section.extra.poc_url }}">{{ section.extra.poc }}</a>
+          {% else %}
+            {{ section.extra.poc }}
+          {% endif %}
+        </span>
+      {% endif %}
+      {% if section.extra.note %}
+        <span class="project-funding-note">{{ section.extra.note }}</span>
+      {% endif %}
+    </aside>
+  {% endif %}
 </div>
 
 <div class="project-desc">{{ section.content | safe }}</div>
 
+{% if section.pages %}
+<p class="section-heading">Posts</p>
 <ul class="post-list">
   {% for post in section.pages %}
     <li>
@@ -29,4 +70,5 @@
     </li>
   {% endfor %}
 </ul>
+{% endif %}
 {% endblock %}
