@@ -4,7 +4,6 @@ path = "people"
 template = "people.html"
 
 [extra]
-intro = "Everyone listed here helped us in some way or the other."
 
 [[extra.people]]
 name = "Ari"

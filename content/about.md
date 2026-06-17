@@ -9,3 +9,5 @@ The hope is to retain some of the freedom of academic work in choosing problems,
 
 More simply, work usually starts in one of two ways.
 Either we reach out to you because a problem looks interesting and we believe we can solve it, or you reach out to us because we are well placed to solve it.
+
+You can reach out to as at: *onatangent@randomwalks.xyz*

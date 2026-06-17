@@ -2,26 +2,33 @@
   General image shortcode.
 
   Usage in markdown:
-    {{ image(src="memory.svg") }}                          # colocated next to the page
+    {{ image(src="memory.svg") }}                          # asset colocated in the project section
+    {{ image(src="./memory.svg") }}                        # same — a leading ./ is stripped
     {{ image(src="clients/placeholder.svg") }}             # file under static/
     {{ image(src="https://example.com/x.png") }}           # external URL
     {{ image(src="memory.svg", caption="A diagram", alt="...", width="70%") }}
 
-  - src       : required. Bare filename = colocated asset; path with "/" = under static/;
-                "http..." or "/..." used as-is.
+  - src       : required. Bare filename = asset colocated with the current section
+                (resolved to the section URL even when used in a post); path with
+                "/" = under static/; "http..." or "/..." used as-is.
   - alt       : accessibility text (defaults to caption, then "").
   - caption   : optional <figcaption> shown under the image.
   - width     : optional max width, e.g. "70%" or "480px" (centres the figure).
 -#}
+{%- set s = src | replace(from="./", to="") -%}
 {%- if src is starting_with("http") or src is starting_with("/") -%}
   {%- set url = src -%}
-{%- elif src is containing("/") -%}
-  {%- set url = get_url(path=src) -%}
+{%- elif s is containing("/") -%}
+  {%- set url = get_url(path=s) -%}
+{%- elif section is defined -%}
+  {%- set url = section.permalink ~ s -%}
+{%- elif page is defined -%}
+  {#- a post: strip the page slug off its permalink to get the section URL -#}
+  {%- set tail = page.slug ~ "/" -%}
+  {%- set base = page.permalink | replace(from=tail, to="") -%}
+  {%- set url = base ~ s -%}
 {%- else -%}
-  {%- if page is defined -%}{%- set base = page.permalink -%}
-  {%- elif section is defined -%}{%- set base = section.permalink -%}
-  {%- else -%}{%- set base = get_url(path="/") -%}{%- endif -%}
-  {%- set url = base ~ src -%}
+  {%- set url = get_url(path=s) -%}
 {%- endif -%}
 <figure class="figure{% if width %} figure--sized{% endif %}"{% if width %} style="max-width: {{ width }}"{% endif %}>
   <img src="{{ url }}" alt="{{ alt | default(value=caption | default(value='')) }}" loading="lazy">

@@ -15,7 +15,7 @@
   margin: 24px 0;
   padding: 14px 18px;
   border-left: 2px solid rgba(var(--accent-rgb), 0.65);
-  background: rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 0 8px 8px 0;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .post-list li a:hover {
-  background: rgba(var(--accent-rgb),0.06);
+  background: rgba(var(--accent-rgb), 0.06);
 }
 
 .post-title {
@@ -61,7 +61,7 @@
 }
 
 .article {
-  max-width: 720px;
+  max-width: 800px;
 }
 
 .article-meta {
@@ -94,7 +94,8 @@
   margin-bottom: 12px;
 }
 
-.article ul, .article ol {
+.article ul,
+.article ol {
   padding-left: 24px;
   margin-bottom: 20px;
 }
